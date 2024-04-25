@@ -1,0 +1,16 @@
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+a {
+    font-style: normal;
+}
+
+footer {
+    font-size: 0.8rem;
+    margin-top: 13rem;
+    width: 40%;
+}
