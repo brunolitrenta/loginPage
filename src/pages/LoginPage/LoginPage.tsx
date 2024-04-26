@@ -94,7 +94,7 @@ export function LoginPage() {
                   :
                   <input className='input' type="text" />
               }
-              <button className='showPassButton' onClick={() => { makePasswordVisible(); changePassButtonImage() }}><img src={buttonPasswordImage} alt="" /></button>
+              <button className='showPassButton' onClick={() => { makePasswordVisible(); changePassButtonImage() }}><img className='showPassImg' src={buttonPasswordImage} alt="" /></button>
             </div>
           </div>
           <button>Enter</button>
