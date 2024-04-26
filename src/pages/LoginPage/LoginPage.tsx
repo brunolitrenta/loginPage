@@ -30,13 +30,24 @@ export function LoginPage() {
   }
 
   function changeThemeButton() {
-    if (themeImage == lightImage) {
+    if (themeImage == lightImage && !showPassword) {
       setThemeImage(moonImage)
       setButtonPasswordImage(eyeBlack)
+      return
     }
-    else {
+    else if(themeImage == lightImage && showPassword) {
+      setThemeImage(moonImage)
+      setButtonPasswordImage(eyeSlashedBlack)
+      return
+    }
+    else if(themeImage == moonImage && !showPassword){
       setThemeImage(lightImage)
       setButtonPasswordImage(eyeWhite)
+      return
+    }
+    else{
+      setThemeImage(lightImage)
+      setButtonPasswordImage(eyeSlashedWhite)
     }
   }
 
