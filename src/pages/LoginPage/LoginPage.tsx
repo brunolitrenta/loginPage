@@ -69,13 +69,13 @@ export function LoginPage() {
         <h1>Sign in</h1>
         <section className='loginBlock'>
           <div className='userInput'>
-            <label>Usuário ou E-mail</label>
+            <label>User or E-mail</label>
             <input className='input' type="email" />
           </div>
           <div className='keyInput'>
             <div className='senhaLabel'>
-              <label>Senha</label>
-              <a href="#######">Esqueceu a senha?</a>
+              <label>Password</label>
+              <a href="#######">Forgot password?</a>
             </div>
             <div className='showSenha'>
               {
