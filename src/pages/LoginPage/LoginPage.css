@@ -19,7 +19,17 @@
   }
 
   .themeButton {
+    background-color: #242424;
+    border: none;
     margin-top: 0.5rem;
+  }
+
+  .themeButton:hover{
+    cursor: pointer;
+  }
+
+  .themeButton:active{
+    cursor: auto;
   }
 
   .screenBox {
@@ -136,8 +146,19 @@
   }
 
   .themeButton {
+    background-color: #ffffff;
+    border: none;
     margin-top: 0.5rem;
   }
+
+  .themeButton:hover{
+    cursor: pointer;
+  }
+
+  .themeButton:active{
+    cursor: auto;
+  }
+
 
   .screenBox {
     width: 100%;
