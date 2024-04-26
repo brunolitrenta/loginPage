@@ -6,7 +6,6 @@
 * {
   font-family: "Monocraft";
 
-
   margin: 0;
   padding: 0;
 }
@@ -19,16 +18,16 @@
   }
 
   .themeButton {
-    background-color: #242424;
+    background-color: #24242400;
     border: none;
     margin-top: 0.5rem;
   }
 
-  .themeButton:hover{
+  .themeButton:hover {
     cursor: pointer;
   }
 
-  .themeButton:active{
+  .themeButton:active {
     cursor: auto;
   }
 
@@ -41,14 +40,13 @@
 
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
     align-items: center;
   }
 
   h1 {
-    margin: 6rem 8rem 5rem 8rem;
+    margin: 5rem 0rem 4rem 0rem;
   }
 
   .loginBlock {
@@ -66,6 +64,14 @@
     border-radius: 0.7rem;
   }
 
+  a {
+    color: rgb(190, 120, 255);
+  }
+
+  a:active {
+    color: rgb(220, 130, 240);
+  }
+
   div>section>div {
     width: 17rem;
 
@@ -75,6 +81,7 @@
   }
 
   .input {
+    color: white;
     background-color: #222222;
 
     margin-top: 0.5rem;
@@ -83,10 +90,6 @@
     border-radius: 0.3rem;
     height: 1.7rem;
     max-width: 16rem;
-  }
-
-  .inputSenha{
-    max-width: 13rem;
   }
 
   .senhaLabel {
@@ -99,27 +102,30 @@
     font-size: 0.9rem;
   }
 
-  .showSenha{
+  .showSenha {
     display: flex;
     align-items: flex-end;
   }
 
-  .showPassButton{
+  .showPassButton {
+    position: relative;
+    left: -2.5rem;
     width: 3rem;
     height: 2.4rem;
-    background-color: rgb(46, 46, 46);
+    background-color: rgba(46, 46, 46, 0);
     border: none;
   }
 
-  .showPassButton:hover{
+  .showPassButton:hover {
     cursor: pointer;
   }
 
-  .showPassButton:active{
+  .showPassButton:active {
     cursor: auto;
   }
 
   div>section>button {
+    color: white;
     background-color: green;
     width: 17rem;
     height: 2.2rem;
@@ -146,16 +152,16 @@
   }
 
   .themeButton {
-    background-color: #ffffff;
+    background-color: #ffffff00;
     border: none;
     margin-top: 0.5rem;
   }
 
-  .themeButton:hover{
+  .themeButton:hover {
     cursor: pointer;
   }
 
-  .themeButton:active{
+  .themeButton:active {
     cursor: auto;
   }
 
@@ -169,14 +175,13 @@
 
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
     align-items: center;
   }
 
   h1 {
-    margin: 6rem 8rem 5rem 8rem;
+    margin: 5rem 0rem 4rem 0rem;
   }
 
   .loginBlock {
@@ -202,7 +207,7 @@
     flex-direction: column;
   }
 
-  .input{
+  .input {
     background-color: lightgray;
     color: black;
 
@@ -211,10 +216,7 @@
     border: 1px solid gray;
     border-radius: 0.3rem;
     height: 1.7rem;
-  }
-
-  .inputSenha{
-    max-width: 13rem;
+    max-width: 16rem;
   }
 
   .senhaLabel {
@@ -226,23 +228,25 @@
     font-size: 0.9rem;
   }
 
-  .showSenha{
+  .showSenha {
     display: flex;
     align-items: flex-end;
   }
 
-  .showPassButton{
-    background-color: rgb(230, 230, 230);
+  .showPassButton {
+    position: relative;
+    left: -2.5rem;
+    background-color: rgba(230, 230, 230, 0);
     width: 3rem;
     height: 2.4rem;
     border: none;
   }
 
-  .showPassButton:hover{
+  .showPassButton:hover {
     cursor: pointer;
   }
 
-  .showPassButton:active{
+  .showPassButton:active {
     cursor: auto;
   }
 
@@ -255,10 +259,10 @@
   }
 
   div>section>button {
-    background-color: green;
+    background-color: rgb(0, 180, 0);
     width: 17rem;
     height: 2.2rem;
-    border: 1px solid rgb(0, 180, 20);
+    border: 1px solid rgb(0, 120, 15);
     border-radius: 0.3rem;
   }
 
@@ -268,7 +272,7 @@
   }
 
   div>section>button:active {
-    background-color: green;
+    background-color: rgb(0, 180, 0);
     cursor: auto;
   }
 }

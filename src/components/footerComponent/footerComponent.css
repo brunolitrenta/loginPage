@@ -11,6 +11,7 @@ a {
 
 footer {
     font-size: 0.8rem;
-    margin-top: 13rem;
+    margin-top: auto;
+    margin-bottom: auto;
     width: 40%;
 }

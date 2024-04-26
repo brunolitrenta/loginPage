@@ -40,24 +40,24 @@ export function LoginPage() {
     }
   }
 
-  function makePasswordVisible(){
+  function makePasswordVisible() {
     setShowPassword(!showPassword)
   }
 
-  function changePassButtonImage(){
-    if(showPassword && switchTheme == 'dark'){
+  function changePassButtonImage() {
+    if (showPassword && switchTheme == 'dark') {
       setButtonPasswordImage(eyeWhite)
       return
     }
-    else if(showPassword && switchTheme == 'light'){
+    else if (showPassword && switchTheme == 'light') {
       setButtonPasswordImage(eyeBlack)
       return
     }
-    else if(!showPassword && switchTheme == 'dark'){
+    else if (!showPassword && switchTheme == 'dark') {
       setButtonPasswordImage(eyeSlashedWhite)
       return
     }
-    else if(!showPassword && switchTheme == 'light'){
+    else if (!showPassword && switchTheme == 'light') {
       setButtonPasswordImage(eyeSlashedBlack)
     }
   }
@@ -79,13 +79,13 @@ export function LoginPage() {
             </div>
             <div className='showSenha'>
               {
-                !showPassword 
-                ?
-                <input className='input inputSenha' type="password" />
-                :
-                <input className='input inputSenha' type="text" />
+                !showPassword
+                  ?
+                  <input className='input' type="password" />
+                  :
+                  <input className='input' type="text" />
               }
-              <button className='showPassButton' onClick={() => {makePasswordVisible(); changePassButtonImage()}}><img src={buttonPasswordImage} alt="" /></button>
+              <button className='showPassButton' onClick={() => { makePasswordVisible(); changePassButtonImage() }}><img src={buttonPasswordImage} alt="" /></button>
             </div>
           </div>
           <button>Enter</button>
