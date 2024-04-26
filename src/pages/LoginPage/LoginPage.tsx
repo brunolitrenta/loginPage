@@ -6,7 +6,7 @@ import eyeBlack from '../../assets/eye-solid-black.svg'
 import eyeWhite from '../../assets/eye-solid-white.svg'
 import eyeSlashedBlack from '../../assets/eye-slash-solid-black.svg'
 import eyeSlashedWhite from '../../assets/eye-slash-solid-white.svg'
-import './LoginPage.css'
+import styles from './LoginPage.module.scss'
 
 export function LoginPage() {
 
@@ -72,34 +72,34 @@ export function LoginPage() {
   }
 
   return (
-    <div className={switchTheme}>
-      <div className='screenBox'>
-        <button className='themeButton' onClick={() => { changeTheme(); changeThemeButton() }}><img src={themeImage} alt="" /></button>
+    <div className={switchTheme == 'light' ? styles.light : styles.dark}>
+      <div className={styles.screenBox}>
+        <button className={styles.themeButton} onClick={() => { changeTheme(); changeThemeButton() }}><img src={themeImage} alt="" /></button>
         <h1>Sign in</h1>
-        <section className='loginBlock'>
-          <div className='userInput'>
+        <section className={styles.loginBlock}>
+          <div className={styles.userInput}>
             <label>User or E-mail</label>
-            <input className='input' type="email" />
+            <input className={styles.input} type="email" />
           </div>
-          <div className='keyInput'>
-            <div className='senhaLabel'>
+          <div className={styles.keyInput}>
+            <div className={styles.senhaLabel}>
               <label>Password</label>
               <a href="#######">Forgot password?</a>
             </div>
-            <div className='showSenha'>
+            <div className={styles.showSenha}>
               {
                 !showPassword
                   ?
-                  <input className='input' type="password" />
+                  <input className={styles.input} type="password" />
                   :
-                  <input className='input' type="text" />
+                  <input className={styles.input} type="text" />
               }
-              <button className='showPassButton' onClick={() => { makePasswordVisible(); changePassButtonImage() }}><img className='showPassImg' src={buttonPasswordImage} alt="" /></button>
+              <button className={styles.showPassButton} onClick={() => { makePasswordVisible(); changePassButtonImage() }}><img className={styles.showPassImg} src={buttonPasswordImage} alt="" /></button>
             </div>
           </div>
           <button>Enter</button>
         </section>
-        <FooterComponent />
+        <FooterComponent className={switchTheme == 'light' ? 'light' : 'dark'} />
       </div>
     </div>
   )

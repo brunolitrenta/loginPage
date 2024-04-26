@@ -1,0 +1,45 @@
+.dark {
+    font-size: 0.8rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 40%;
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        a {
+            color: #be78ff;
+            font-style: normal;
+
+            &:active {
+                color: #dc82f0;
+            }
+        }
+    }
+}
+
+.light {
+    font-size: 0.8rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 40%;
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        a {
+            color: blue;
+            font-style: normal;
+
+            &:active {
+                color: blueviolet;
+            }
+        }
+    }
+}

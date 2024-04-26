@@ -1,8 +1,13 @@
-import './footerComponent.css'
+import styles from './footerComponent.module.scss'
 
-export function FooterComponent() {
+interface IProps {
+    className: string
+}
+
+export function FooterComponent(props: IProps) {
+
     return (
-        <footer>
+        <footer className={props.className == 'light' ? styles.light : styles.dark}>
             <ul>
                 <li><a href="#">Terms</a></li>
                 <li><a href="##">Privacy</a></li>

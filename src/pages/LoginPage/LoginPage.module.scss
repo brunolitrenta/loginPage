@@ -1,0 +1,312 @@
+@font-face {
+  font-family: "Monocraft";
+  src: url(../../fonts/Monocraft.ttf);
+}
+
+* {
+  font-family: "Monocraft";
+
+  margin: 0;
+  padding: 0;
+}
+
+.dark {
+  .screenBox {
+    width: 100%;
+    height: 100vh;
+
+    background-color: #242424;
+    color: white;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+
+    .themeButton {
+      background-color: #ffffff00;
+      border: none;
+      margin-top: 0.5rem;
+
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        cursor: auto;
+      }
+    }
+
+    h1 {
+      margin: 5rem 0rem 4rem 0rem;
+    }
+
+    .loginBlock {
+      background-color: #2e2e2e;
+      width: 20rem;
+      height: 15rem;
+      padding: 0.5rem 0 0.5rem 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+
+      border: 1px solid gray;
+      border-radius: 0.7rem;
+
+      .userInput {
+        width: 17rem;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .input {
+          background-color: #242424;
+          color: rgb(255, 255, 255);
+
+          margin-top: 0.5rem;
+          padding: 0.3rem;
+          border: 1px solid gray;
+          border-radius: 0.3rem;
+          height: 1.7rem;
+          max-width: 16rem;
+        }
+      }
+
+      .keyInput {
+        width: 17rem;
+        
+        .senhaLabel {
+          display: flex;
+          justify-content: space-between;
+
+          a {
+            font-size: 0.9rem;
+            color: rgb(190, 120, 255);
+
+            &:active {
+              color: rgb(220, 130, 240);
+            }
+          }
+        }
+
+        .showSenha {
+          display: flex;
+          align-items: flex-end;
+
+          .input {
+            background-color: #222222;
+            color: rgb(255, 255, 255);
+  
+            margin-top: 0.5rem;
+            padding: 0.3rem;
+            border: 1px solid gray;
+            border-radius: 0.3rem;
+            height: 1.7rem;
+            max-width: 16rem;
+          }
+
+          .showPassButton {
+            position: relative;
+            left: -2rem;
+            background-color: rgba(230, 230, 230, 0);
+            width: 3rem;
+            height: 2.4rem;
+            border: none;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &:active {
+              cursor: auto;
+            }
+
+            .showPassImg {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+        }
+      }
+
+      button {
+        color: white;
+        background-color: rgb(0, 180, 0);
+        width: 17rem;
+        height: 2.2rem;
+        border: 1px solid rgb(0, 120, 15);
+        border-radius: 0.3rem;
+
+        &:hover {
+          background-color: rgb(0, 150, 0);
+          cursor: pointer;
+        }
+
+        &:active {
+          background-color: rgb(0, 180, 0);
+          cursor: auto;
+        }
+      }
+    }
+  }
+}
+
+.light {
+  .screenBox {
+    width: 100%;
+    height: 100vh;
+
+    background-color: #ffffff;
+    color: black;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+
+    .themeButton {
+      background-color: #ffffff00;
+      border: none;
+      margin-top: 0.5rem;
+
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        cursor: auto;
+      }
+    }
+
+    h1 {
+      margin: 5rem 0rem 4rem 0rem;
+    }
+
+    .loginBlock {
+      background-color: rgb(230, 230, 230);
+      width: 20rem;
+      height: 15rem;
+      padding: 0.5rem 0 0.5rem 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+
+      border: 1px solid gray;
+      border-radius: 0.7rem;
+
+      .userInput {
+        width: 17rem;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .input {
+          background-color: lightgray;
+          color: black;
+
+          margin-top: 0.5rem;
+          padding: 0.3rem;
+          border: 1px solid gray;
+          border-radius: 0.3rem;
+          height: 1.7rem;
+          max-width: 16rem;
+        }
+      }
+
+      .keyInput {
+        width: 17rem;
+
+        .senhaLabel {
+          display: flex;
+          justify-content: space-between;
+
+          a {
+            font-size: 0.9rem;
+            color: blue;
+
+            &:active {
+              color: blueviolet;
+            }
+          }
+        }
+
+        .showSenha {
+          display: flex;
+          align-items: flex-end;
+
+          .input {
+            background-color: lightgray;
+            color: black;
+  
+            margin-top: 0.5rem;
+            padding: 0.3rem;
+            border: 1px solid gray;
+            border-radius: 0.3rem;
+            height: 1.7rem;
+            max-width: 16rem;
+          }
+
+          .showPassButton {
+            position: relative;
+            left: -2rem;
+            background-color: rgba(230, 230, 230, 0);
+            width: 3rem;
+            height: 2.4rem;
+            border: none;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &:active {
+              cursor: auto;
+            }
+
+            .showPassImg {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+        }
+      }
+
+      button {
+        background-color: rgb(0, 180, 0);
+        width: 17rem;
+        height: 2.2rem;
+        border: 1px solid rgb(0, 120, 15);
+        border-radius: 0.3rem;
+
+        &:hover {
+          background-color: rgb(0, 150, 0);
+          cursor: pointer;
+        }
+
+        &:active {
+          background-color: rgb(0, 180, 0);
+          cursor: auto;
+        }
+      }
+    }
+  }
+}
