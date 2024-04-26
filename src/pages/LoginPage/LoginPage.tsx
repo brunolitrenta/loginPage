@@ -88,7 +88,7 @@ export function LoginPage() {
               <button className='showPassButton' onClick={() => {makePasswordVisible(); changePassButtonImage()}}><img src={buttonPasswordImage} alt="" /></button>
             </div>
           </div>
-          <button>Entrar</button>
+          <button>Enter</button>
         </section>
         <FooterComponent />
       </div>
