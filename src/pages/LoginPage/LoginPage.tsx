@@ -10,8 +10,6 @@ import './LoginPage.css'
 
 export function LoginPage() {
 
-
-
   const [switchTheme, setSwitchTheme] = useState<string>('dark')
 
   const [themeImage, setThemeImage] = useState<string>(lightImage)
@@ -35,17 +33,17 @@ export function LoginPage() {
       setButtonPasswordImage(eyeBlack)
       return
     }
-    else if(themeImage == lightImage && showPassword) {
+    else if (themeImage == lightImage && showPassword) {
       setThemeImage(moonImage)
       setButtonPasswordImage(eyeSlashedBlack)
       return
     }
-    else if(themeImage == moonImage && !showPassword){
+    else if (themeImage == moonImage && !showPassword) {
       setThemeImage(lightImage)
       setButtonPasswordImage(eyeWhite)
       return
     }
-    else{
+    else {
       setThemeImage(lightImage)
       setButtonPasswordImage(eyeSlashedWhite)
     }
