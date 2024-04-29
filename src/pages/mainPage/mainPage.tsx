@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { LoginPage } from "../loginPage/loginPage"
-import LoggedPage from "../loggedPage/loggedPage"
+import { LoginPage } from "../loginPage/loginPage.tsx"
+import LoggedPage from "../loggedPage/loggedPage.tsx"
 
 export default function MainPage() {
 
