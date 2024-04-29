@@ -1,4 +1,4 @@
-import styles from "../loggedPage/loggedPage.module.scss"
+import styles from "../secondaryPage/secondaryPage.module.scss"
 
 interface IProps {
     loginAction: (switchPage: boolean) => void
