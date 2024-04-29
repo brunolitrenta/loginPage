@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { LoginPage } from './pages/LoginPage/LoginPage.tsx'
+import MainPage from './pages/mainPage/mainPage'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <LoginPage />
+    <MainPage />
   </React.StrictMode>,
 )

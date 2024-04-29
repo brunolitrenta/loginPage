@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { FooterComponent } from '../../components/footerComponent/footerComponent'
 import lightImage from '../../assets/light-svgrepo-com.svg'
 import moonImage from '../../assets/moon-svgrepo-com.svg'
@@ -6,9 +6,13 @@ import eyeBlack from '../../assets/eye-solid-black.svg'
 import eyeWhite from '../../assets/eye-solid-white.svg'
 import eyeSlashedBlack from '../../assets/eye-slash-solid-black.svg'
 import eyeSlashedWhite from '../../assets/eye-slash-solid-white.svg'
-import styles from './LoginPage.module.scss'
+import styles from './loginPage.module.scss'
 
-export function LoginPage() {
+interface IProps {
+  loginAction: (switchPage: boolean) => void
+}
+
+export function LoginPage(props: IProps) {
 
   const [switchTheme, setSwitchTheme] = useState<string>('dark')
 
@@ -17,6 +21,10 @@ export function LoginPage() {
   const [buttonPasswordImage, setButtonPasswordImage] = useState<string>(eyeWhite)
 
   const [showPassword, setShowPassword] = useState<boolean>(false)
+
+  const userInput = useRef<HTMLInputElement>(null)
+
+  const loginCheck = useRef<HTMLInputElement>(null)
 
   function changeTheme() {
     if (switchTheme != 'light') {
@@ -71,6 +79,17 @@ export function LoginPage() {
     }
   }
 
+  function login() {
+    localStorage.setItem("Usuário", userInput.current!.value)
+
+    if (loginCheck.current!.checked == true) {
+      localStorage.setItem("keepLogin", "true")
+    }
+    else {
+      localStorage.setItem("keepLogin", "false")
+    }
+  }
+
   return (
     <div className={switchTheme == 'light' ? styles.light : styles.dark}>
       <div className={styles.screenBox}>
@@ -79,7 +98,7 @@ export function LoginPage() {
         <section className={styles.loginBlock}>
           <div className={styles.userInput}>
             <label>User or E-mail</label>
-            <input className={styles.input} type="email" />
+            <input ref={userInput} className={styles.input} type="email" />
           </div>
           <div className={styles.keyInput}>
             <div className={styles.senhaLabel}>
@@ -97,7 +116,11 @@ export function LoginPage() {
               <button className={styles.showPassButton} onClick={() => { makePasswordVisible(); changePassButtonImage() }}><img className={styles.showPassImg} src={buttonPasswordImage} alt="" /></button>
             </div>
           </div>
-          <button>Enter</button>
+          <div className={styles.checkInput}>
+            <input ref={loginCheck} type="checkbox" className={styles.checkbox} />
+            <label>Keep logged in?</label>
+          </div>
+          <button onClick={() => { login(); props.loginAction(false) }}>Enter</button>
         </section>
         <FooterComponent className={switchTheme == 'light' ? 'light' : 'dark'} />
       </div>
