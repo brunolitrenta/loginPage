@@ -97,28 +97,28 @@ export function LoginPage(props: IProps) {
         <h1>Sign in</h1>
         <section className={styles.loginBlock}>
           <div className={styles.userInput}>
-            <label>User or E-mail</label>
-            <input ref={userInput} className={styles.input} type="email" />
+            <label htmlFor='usernameInput'>User or E-mail</label>
+            <input id='usernameInput' ref={userInput} className={styles.input} type="email" />
           </div>
           <div className={styles.keyInput}>
             <div className={styles.senhaLabel}>
-              <label>Password</label>
+              <label htmlFor='passwordInput'>Password</label>
               <a href="#######">Forgot password?</a>
             </div>
             <div className={styles.showSenha}>
               {
                 !showPassword
                   ?
-                  <input className={styles.input} type="password" />
+                  <input id='passwordInput' className={styles.input} type="password" />
                   :
-                  <input className={styles.input} type="text" />
+                  <input id='passwordInput' className={styles.input} type="text" />
               }
               <button className={styles.showPassButton} onClick={() => { makePasswordVisible(); changePassButtonImage() }}><img className={styles.showPassImg} src={buttonPasswordImage} alt="" /></button>
             </div>
           </div>
           <div className={styles.checkInput}>
-            <input ref={loginCheck} type="checkbox" className={styles.checkbox} />
-            <label>Keep logged in?</label>
+            <input id='loginCheckbox' ref={loginCheck} type="checkbox" className={styles.checkbox} />
+            <label htmlFor='loginCheckbox'>Keep logged in?</label>
           </div>
           <button onClick={() => { login(); props.pageAction(false) }}>Enter</button>
         </section>
