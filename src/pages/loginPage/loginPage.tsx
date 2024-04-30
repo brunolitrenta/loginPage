@@ -9,7 +9,7 @@ import eyeSlashedWhite from '../../assets/eye-slash-solid-white.svg'
 import styles from './loginPage.module.scss'
 
 interface IProps {
-  loginAction: (switchPage: boolean) => void
+  pageAction: (switchPage: boolean) => void
 }
 
 export function LoginPage(props: IProps) {
@@ -120,7 +120,7 @@ export function LoginPage(props: IProps) {
             <input ref={loginCheck} type="checkbox" className={styles.checkbox} />
             <label>Keep logged in?</label>
           </div>
-          <button onClick={() => { login(); props.loginAction(false) }}>Enter</button>
+          <button onClick={() => { login(); props.pageAction(false) }}>Enter</button>
         </section>
         <FooterComponent className={switchTheme == 'light' ? 'light' : 'dark'} />
       </div>

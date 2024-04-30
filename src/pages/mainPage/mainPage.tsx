@@ -9,10 +9,10 @@ export default function MainPage() {
     const [switchPage, setSwitchPage] = useState<boolean>(true)
 
     useEffect(() => {
-        changePages()
+        changePagesAtStartup()
     }, [])
 
-    function changePages() {
+    function changePagesAtStartup() {
         if (keepLogin == "true") {
             setSwitchPage(switchPage == false)
         }
@@ -21,7 +21,7 @@ export default function MainPage() {
         }
     }
 
-    function loginAtButtonClick(switchPage: boolean) {
+    function switchPages(switchPage: boolean) {
         setSwitchPage(switchPage)
     }
 
@@ -30,9 +30,9 @@ export default function MainPage() {
             {
                 switchPage
                     ?
-                    <LoginPage loginAction={loginAtButtonClick} />
+                    <LoginPage pageAction={switchPages} />
                     :
-                    <LoggedPage loginAction={loginAtButtonClick} />
+                    <LoggedPage pageAction={switchPages} />
             }
         </div>
     )
