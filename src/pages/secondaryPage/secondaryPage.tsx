@@ -1,3 +1,4 @@
+import chickenImage from "../../assets/Chicken_JE2_BE2.webp"
 import styles from "../secondaryPage/secondaryPage.module.scss"
 
 interface IProps {
@@ -12,7 +13,8 @@ export default function LoggedPage(props: IProps) {
         <div className={styles.screenBox}>
             <h1>Main</h1>
             <p>Username: {userName}</p>
-            <button onClick={() => props.pageAction(true)}>Sair</button>
+            <img src={chickenImage} alt="" />
+            <button onClick={() => props.pageAction(true)}>Logout</button>
         </div>
     )
 }
