@@ -38,6 +38,7 @@ export function LoginPage(props: IProps) {
       setSwitchTheme('light')
       setThemeImage(moonImage)
       setButtonPasswordImage(eyeBlack)
+      return
     }
     else {
       setSwitchTheme('dark')
@@ -58,17 +59,17 @@ export function LoginPage(props: IProps) {
   }
 
   function changeThemeButton() {
-    if (savedTheme == "dark" && !showPassword) {
+    if (switchTheme == "dark" && !showPassword) {
       setThemeImage(moonImage)
       setButtonPasswordImage(eyeBlack)
       return
     }
-    else if (savedTheme == "dark" && showPassword) {
+    else if (switchTheme == "dark" && showPassword) {
       setThemeImage(moonImage)
       setButtonPasswordImage(eyeSlashedBlack)
       return
     }
-    else if (savedTheme == "light" && !showPassword) {
+    else if (switchTheme == "light" && !showPassword) {
       setThemeImage(lightImage)
       setButtonPasswordImage(eyeWhite)
       return
