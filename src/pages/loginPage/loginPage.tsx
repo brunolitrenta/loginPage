@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { FooterComponent } from '../../components/footerComponent/footerComponent'
 import lightImage from '../../assets/light-svgrepo-com.svg'
 import moonImage from '../../assets/moon-svgrepo-com.svg'
@@ -14,11 +14,13 @@ interface IProps {
 
 export function LoginPage(props: IProps) {
 
+  const savedTheme = localStorage.getItem("theme")
+
   const [switchTheme, setSwitchTheme] = useState<string>('dark')
 
-  const [themeImage, setThemeImage] = useState<string>(lightImage)
+  const [themeImage, setThemeImage] = useState<string>('')
 
-  const [buttonPasswordImage, setButtonPasswordImage] = useState<string>(eyeWhite)
+  const [buttonPasswordImage, setButtonPasswordImage] = useState<string>('')
 
   const [showPassword, setShowPassword] = useState<boolean>(false)
 
@@ -26,27 +28,47 @@ export function LoginPage(props: IProps) {
 
   const loginCheck = useRef<HTMLInputElement>(null)
 
-  function changeTheme() {
-    if (switchTheme != 'light') {
+  useEffect(() => {
+    changeThemeAtStartup()
+  }, [])
+
+
+  function changeThemeAtStartup() {
+    if (savedTheme == 'light') {
       setSwitchTheme('light')
+      setThemeImage(moonImage)
+      setButtonPasswordImage(eyeBlack)
     }
     else {
       setSwitchTheme('dark')
+      setThemeImage(lightImage)
+      setButtonPasswordImage(eyeWhite)
+    }
+  }
+
+  function changeTheme() {
+    if (switchTheme != 'light') {
+      setSwitchTheme('light')
+      localStorage.setItem("theme", "light")
+    }
+    else {
+      setSwitchTheme('dark')
+      localStorage.setItem("theme", "dark")
     }
   }
 
   function changeThemeButton() {
-    if (themeImage == lightImage && !showPassword) {
+    if (savedTheme == "dark" && !showPassword) {
       setThemeImage(moonImage)
       setButtonPasswordImage(eyeBlack)
       return
     }
-    else if (themeImage == lightImage && showPassword) {
+    else if (savedTheme == "dark" && showPassword) {
       setThemeImage(moonImage)
       setButtonPasswordImage(eyeSlashedBlack)
       return
     }
-    else if (themeImage == moonImage && !showPassword) {
+    else if (savedTheme == "light" && !showPassword) {
       setThemeImage(lightImage)
       setButtonPasswordImage(eyeWhite)
       return
