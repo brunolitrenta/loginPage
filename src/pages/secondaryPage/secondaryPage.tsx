@@ -15,9 +15,8 @@ export default function LoggedPage(props: IProps) {
 
     const [changeContent, setChangeContent] = useState<number>(1)
 
-
     return (
-        <div className={theme == "dark" ? styles.dark : styles.light}>
+        <div className={theme == "light" ? styles.light : styles.dark}>
             <div className={styles.screenBox}>
                 <h1>Main</h1>
                 <header>
