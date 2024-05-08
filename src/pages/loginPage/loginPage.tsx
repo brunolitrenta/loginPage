@@ -7,14 +7,15 @@ import eyeWhite from '../../assets/eye-solid-white.svg'
 import eyeSlashedBlack from '../../assets/eye-slash-solid-black.svg'
 import eyeSlashedWhite from '../../assets/eye-slash-solid-white.svg'
 import styles from './loginPage.module.scss'
+import { useNavigate } from 'react-router-dom'
 
-interface IProps {
-  pageAction: (switchPage: boolean) => void
-}
+export function LoginPage() {
 
-export function LoginPage(props: IProps) {
+  const navigate = useNavigate()
 
   const savedTheme = localStorage.getItem("theme")
+
+  const isLogged = localStorage.getItem("keepLogin")
 
   const [switchTheme, setSwitchTheme] = useState<string>('dark')
 
@@ -32,6 +33,11 @@ export function LoginPage(props: IProps) {
     changeThemeAtStartup()
   }, [])
 
+  useEffect(() => {
+    if (isLogged == "true") {
+      navigate("/home")
+    }
+  }, [])
 
   function changeThemeAtStartup() {
     if (savedTheme == 'light') {
@@ -103,7 +109,7 @@ export function LoginPage(props: IProps) {
   }
 
   function login() {
-    localStorage.setItem("Usuário", userInput.current!.value)
+    localStorage.setItem("username", userInput.current!.value)
 
     if (loginCheck.current!.checked == true) {
       localStorage.setItem("keepLogin", "true")
@@ -111,6 +117,7 @@ export function LoginPage(props: IProps) {
     else {
       localStorage.setItem("keepLogin", "false")
     }
+    navigate("/home")
   }
 
   return (
@@ -143,7 +150,7 @@ export function LoginPage(props: IProps) {
             <input id='loginCheckbox' ref={loginCheck} type="checkbox" className={styles.checkbox} />
             <label htmlFor='loginCheckbox'>Keep logged in?</label>
           </div>
-          <button onClick={() => { login(); props.pageAction(false) }}>Enter</button>
+          <button onClick={() => { login() }}>Enter</button>
         </section>
         <FooterComponent className={switchTheme == 'light' ? 'light' : 'dark'} />
       </div>

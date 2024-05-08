@@ -8,7 +8,7 @@ interface IProps {
     contentShowed: number
 }
 
-export function ContentChoice(props: IProps) { 
+export function ContentChoice(props: IProps) {
     if (props.contentShowed == 1) {
         return (
             <img className={styles.chicken} src={chickenImage} alt="" />

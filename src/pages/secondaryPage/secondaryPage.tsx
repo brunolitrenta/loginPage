@@ -2,18 +2,23 @@ import { FooterComponent } from "../../components/footerComponent/footerComponen
 import { ContentChoice } from "../../components/choiceComponent/choiceComponent"
 import styles from "../secondaryPage/secondaryPage.module.scss"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
-interface IProps {
-    pageAction: (switchPage: boolean) => void
-}
+export default function LoggedPage() {
 
-export default function LoggedPage(props: IProps) {
+    const navigate = useNavigate()
 
     const theme = localStorage.getItem("theme")
 
-    const userName = localStorage.getItem("Usuário")
+    const userName = localStorage.getItem("username")
 
     const [changeContent, setChangeContent] = useState<number>(1)
+
+    function exit() {
+        localStorage.setItem("keepLogin", "false")
+        localStorage.setItem("username", "")
+        navigate("/")
+    }
 
     return (
         <div className={theme == "light" ? styles.light : styles.dark}>
@@ -27,7 +32,7 @@ export default function LoggedPage(props: IProps) {
                 </header>
                 <p>Username: {userName}</p>
                 <ContentChoice contentShowed={changeContent} />
-                <button className={styles.logoutButton} onClick={() => props.pageAction(true)}>Logout</button>
+                <button className={styles.logoutButton} onClick={() => exit()}>Logout</button>
                 <FooterComponent className={theme!} />
             </div>
         </div>
