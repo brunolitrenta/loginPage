@@ -30,12 +30,12 @@ export function LoginPage() {
   const loginCheck = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    changeThemeAtStartup()
-  }, [])
-
-  useEffect(() => {
     if (isLogged == "true") {
       navigate("/home")
+    }
+    else{
+      changeThemeAtStartup()
+      document.title = "Enter"
     }
   }, [])
 

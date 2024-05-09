@@ -14,17 +14,17 @@ export function ContentChoice(props: IProps) {
             <img className={styles.chicken} src={chickenImage} alt="" />
         )
     }
-    else if (props.contentShowed == 2) {
+    if (props.contentShowed == 2) {
         return (
             <img className={styles.axolotl} src={axolotlImage} alt="" />
         )
     }
-    else if (props.contentShowed == 3) {
+    if (props.contentShowed == 3) {
         return (
             <img className={styles.turtle} src={turtleImage} alt="" />
         )
     }
-    else {
+    if (props.contentShowed == 4) {
         return (
             <img className={styles.llama} src={llamaImage} alt="" />
         )

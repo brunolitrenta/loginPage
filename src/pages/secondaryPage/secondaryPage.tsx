@@ -1,7 +1,7 @@
 import { FooterComponent } from "../../components/footerComponent/footerComponent"
 import { ContentChoice } from "../../components/choiceComponent/choiceComponent"
 import styles from "../secondaryPage/secondaryPage.module.scss"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function LoggedPage() {
@@ -13,6 +13,10 @@ export default function LoggedPage() {
     const userName = localStorage.getItem("username")
 
     const [changeContent, setChangeContent] = useState<number>(1)
+
+    useEffect(() => {
+        document.title = "Home"
+    }, [])
 
     function exit() {
         localStorage.setItem("keepLogin", "false")
