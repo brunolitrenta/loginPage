@@ -19,8 +19,8 @@ export default function LoggedPage() {
     }, [])
 
     function exit() {
-        localStorage.setItem("keepLogin", "false")
-        localStorage.setItem("username", "")
+        localStorage.removeItem("keepLogin")
+        localStorage.removeItem("username")
         navigate("/")
     }
 
