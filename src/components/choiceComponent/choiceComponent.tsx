@@ -9,24 +9,19 @@ interface IProps {
 }
 
 export function ContentChoice(props: IProps) {
-    if (props.contentShowed == 1) {
-        return (
-            <img className={styles.chicken} src={chickenImage} alt="" />
-        )
-    }
-    if (props.contentShowed == 2) {
-        return (
-            <img className={styles.axolotl} src={axolotlImage} alt="" />
-        )
-    }
-    if (props.contentShowed == 3) {
-        return (
-            <img className={styles.turtle} src={turtleImage} alt="" />
-        )
-    }
-    if (props.contentShowed == 4) {
-        return (
-            <img className={styles.llama} src={llamaImage} alt="" />
-        )
-    }
+    return (
+        <div className={styles.changecontent}>
+            {
+                {
+                    1: <img className={styles.chicken} src={chickenImage} alt="" />,
+
+                    2: <img className={styles.axolotl} src={axolotlImage} alt="" />,
+
+                    3: <img className={styles.turtle} src={turtleImage} alt="" />,
+
+                    4: <img className={styles.llama} src={llamaImage} alt="" />
+                }[props.contentShowed]
+            }
+        </div>
+    )
 }
