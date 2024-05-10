@@ -114,9 +114,6 @@ export function LoginPage() {
     if (loginCheck.current!.checked == true) {
       localStorage.setItem("keepLogin", "true")
     }
-    else {
-      localStorage.setItem("keepLogin", "false")
-    }
     navigate("/home")
   }
 
