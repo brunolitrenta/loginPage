@@ -33,7 +33,7 @@ export function LoginPage() {
     if (isLogged == "true") {
       navigate("/home")
     }
-    else{
+    else {
       changeThemeAtStartup()
       document.title = "Enter"
     }

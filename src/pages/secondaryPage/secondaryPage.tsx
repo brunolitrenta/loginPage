@@ -1,18 +1,19 @@
 import { FooterComponent } from "../../components/footerComponent/footerComponent"
 import { ContentChoice } from "../../components/choiceComponent/choiceComponent"
 import styles from "../secondaryPage/secondaryPage.module.scss"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { useChoice } from "../../hooks/choiceContext"
 
 export default function LoggedPage() {
+
+    const { setChangeContent } = useChoice()
 
     const navigate = useNavigate()
 
     const theme = localStorage.getItem("theme")
 
     const userName = localStorage.getItem("username")
-
-    const [changeContent, setChangeContent] = useState<number>(1)
 
     useEffect(() => {
         document.title = "Home"
@@ -35,7 +36,7 @@ export default function LoggedPage() {
                     <button onClick={() => setChangeContent(4)}>Llama</button>
                 </header>
                 <p>Username: {userName}</p>
-                <ContentChoice contentShowed={changeContent} />
+                <ContentChoice />
                 <button className={styles.logoutButton} onClick={() => exit()}>Logout</button>
                 <FooterComponent className={theme!} />
             </div>

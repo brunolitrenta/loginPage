@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { LoginPage } from './pages/loginPage/loginPage';
 import LoggedPage from './pages/secondaryPage/secondaryPage';
+import { ChoiceContextProvider } from './hooks/choiceContext.tsx';
 
 import {
   createBrowserRouter,
@@ -21,6 +22,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ChoiceContextProvider>
+      <RouterProvider router={router} />
+    </ChoiceContextProvider>
   </React.StrictMode>,
 )

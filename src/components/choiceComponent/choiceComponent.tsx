@@ -3,12 +3,12 @@ import chickenImage from '../../assets/Chicken_JE2_BE2.webp'
 import axolotlImage from '../../assets/Lucy_Axolotl_JE2.webp'
 import turtleImage from '../../assets/1597671100_13809.png'
 import llamaImage from '../../assets/1597671383_63187.png'
+import { useChoice } from "../../hooks/choiceContext"
 
-interface IProps {
-    contentShowed: number
-}
+export function ContentChoice() {
 
-export function ContentChoice(props: IProps) {
+    const { changeContent } = useChoice()
+
     return (
         <div className={styles.changecontent}>
             {
@@ -20,7 +20,7 @@ export function ContentChoice(props: IProps) {
                     3: <img className={styles.turtle} src={turtleImage} alt="" />,
 
                     4: <img className={styles.llama} src={llamaImage} alt="" />
-                }[props.contentShowed]
+                }[changeContent]
             }
         </div>
     )
