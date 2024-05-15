@@ -56,31 +56,35 @@
                 &:active {
                     border: 1px solid #be78ff;
                 }
-            }
-        }
 
-        .logoutButton {
-            margin: auto;
-            margin-top: 2rem;
-            margin-bottom: 0;
-            padding: 0.3rem;
-            border: 1px solid crimson;
-            border-radius: 0.3rem;
-            color: white;
-            background-color: #282828;
-
-            &:hover {
-                cursor: pointer;
-                border: 1px solid #410000;
-            }
-
-            &:active {
-                border: 1px solid crimson;
+                &:focus {
+                    border: 1px solid greenyellow
+                }
             }
         }
     }
 
+    .logoutButton {
+        margin: auto;
+        margin-top: 2rem;
+        margin-bottom: 0;
+        padding: 0.3rem;
+        border: 1px solid crimson;
+        border-radius: 0.3rem;
+        color: white;
+        background-color: #282828;
+
+        &:hover {
+            cursor: pointer;
+            border: 1px solid #410000;
+        }
+
+        &:active {
+            border: 1px solid crimson;
+        }
+    }
 }
+
 
 .light {
     .screenBox {
@@ -126,6 +130,10 @@
 
                 &:active {
                     border: 1px solid blue;
+                }
+
+                &:focus {
+                    border: 1px solid rgb(255, 0, 255);
                 }
             }
         }
